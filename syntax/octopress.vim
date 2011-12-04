@@ -24,7 +24,7 @@ syn region octopressLiquidBlock matchgroup=octopressLiquidBlockDelimiter start=/
 syn match octopressPullquote /\m{"\s[^{]\+\s"}/ contained oneline
 
 " Backtick block
-syn region octopressBacktickBlock matchgroup=octopressBacktickBlockDelimiter start=/\m^```\s*$/ end=/\m^```\s*$/
+syn region octopressBacktickBlock matchgroup=octopressBacktickBlockDelimiter start=/\m^```\(\s*\|\s\+.*\)$/ end=/\m^```\s*$/
 
 command -nargs=+ HiLink hi def link <args>
 

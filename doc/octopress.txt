@@ -1,0 +1,34 @@
+*octopress.txt*                                                    *octopress*
+
+Introduction                          |octopress-intro|
+The :Octopress command                |:Octopress|
+Using a custom 'rake' executable      |g:octopress_rake_executable|
+
+                                                             *octopress-intro*
+vim-octopress provides syntax support for Octopress posts (in Markdown or
+Textile formats) and provides some Octopress rake tasks to run within Vim.
+
+You can always find the latest code on GitHub:
+
+https://github.com/tangledhelix/vim-octopress
+
+                                                                  *:Octopress*
+The :Octopress command
+
+:Octopress <task>
+
+<task> is one of:
+
+    generate     Regenerate output files from sources
+    deploy       Default deploy task
+    gen_deploy   Generate and then deploy
+    push         Deploy to GitHub Pages
+    rsync        Deploy via rsync
+    clean        Clean caches (pygments, gist, sass)
+
+                                                 *g:octopress_rake_executable*
+By default, "rake" is taken from your path. If you want to use a different
+rake, specify its path in octopress_rake_executable.
+
+    let g:octopress_rake_executable = '/path/to/rake'
+

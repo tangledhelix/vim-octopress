@@ -1,4 +1,5 @@
 " octopress.vim - Wrapper for Octopress Rake commands
+" Language:         Octopress (Markdown/Textile with Liquid)
 " Maintainer:       Dan Lowe <dan@tangledhelix.com>
 " Last Changed:     6 Dec 2011
 " URL:              https://github.com/tangledhelix/vim-octopress

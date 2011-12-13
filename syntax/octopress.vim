@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:     Octopress (Markdown/Textile with Liquid)
 " Maintainer:   Dan Lowe <dan@tangledhelix.com>
-" Last Change:  12 Dec 2012
+" Last Change:  13 Dec 2012
 " URL:          https://github.com/tangledhelix/vim-octopress
 
 if exists('b:current_syntax')
@@ -12,11 +12,11 @@ if !exists('g:octopress_default_format')
 	let g:octopress_default_format = 'markdown'
 endif
 
-let filename = expand('%:t')
-if empty(filename)
+let b:filename = expand('%:t')
+if empty(b:filename)
 	let b:octopress_filetype = g:octopress_default_format
 else
-	let b:octopress_fname_result = matchlist(filename, '\m\.\([^.]\+\)$')
+	let b:octopress_fname_result = matchlist(b:filename, '\m\.\([^.]\+\)$')
 	let b:octopress_fname_exten = b:octopress_fname_result[1]
 	if b:octopress_fname_exten == 'textile'
 		let b:octopress_filetype = 'textile'

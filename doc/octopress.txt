@@ -1,33 +1,46 @@
-*octopress.txt*                                                    *octopress*
+*octopress.txt*                                    *vim-octopress* *octopress*
 
-Introduction                          |octopress-intro|
-Default file format                   |g:octopress_default_format|
-Textile support                       |octopress-textile|
+Introduction                              |octopress-intro|
+Default file format                       |octopress-default-format|
+Textile support                           |octopress-textile|
+Using Octopress syntax automatically      |octopress-autocmd|
 
                                                              *octopress-intro*
 vim-octopress provides syntax support for Octopress posts (in Markdown or
 Textile formats).
 
-You can always find the latest code on GitHub:
+You can get the latest code on GitHub:
 
 https://github.com/tangledhelix/vim-octopress
 
-                                                  *g:octopress_default_format*
+                       *g:octopress_default_format* *octopress-default-format*
 By default, Octopress will assume a file's base syntax is Markdown, unless:
 
     - The filename ends in .textile, which will switch to Textile mode
-    - The buffer is unnamed and g:octopress_default_format is 'textile'
+    - The buffer is unnamed and 'g:octopress_default_format' is 'textile'
 
 Example:
 
     let g:octopress_default_format = 'textile'
 
-The default is automatically 'markdown'.
+The default format is 'markdown' unless otherwise specified.
 
                                                            *octopress-textile*
 Though the default format is Markdown, Textile is supported as well. You
 must install the Textile bundle yourself, since it is not included with
-Vim (at least not as of version 7.3). You can get the Textile bundle here:
+Vim (at least not as of version 7.3). You can get the Textile bundle at
+either of the following locations:
 
     http://www.vim.org/scripts/script.php?script_id=2305
+
+    https://github.com/timcharper/textile.vim
+
+                                                           *octopress-autocmd*
+To use this mode for your Octopress files, use an `autocmd`.
+
+    autocmd BufNewFile,BufRead *.markdown,*.textile setfiletype octopress
+
+Since Octopress is a superset of Markdown and Textile, it should not interfere
+with non-Octopress Markdown and Textile files. It's also a superset of the
+Jekyll syntax, so it should work fine for any pure Jekyll files you might have.
 

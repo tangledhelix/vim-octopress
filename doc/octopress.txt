@@ -1,0 +1,25 @@
+*octopress.txt*                                                    *octopress*
+
+Introduction                          |octopress-intro|
+Default file format                   |g:octopress_default_format|
+
+                                                             *octopress-intro*
+vim-octopress provides syntax support for Octopress posts (in Markdown or
+Textile formats).
+
+You can always find the latest code on GitHub:
+
+https://github.com/tangledhelix/vim-octopress
+
+                                                  *g:octopress_default_format*
+By default, Octopress will assume a file's base syntax is Markdown, unless:
+
+    - The filename ends in .textile, which will switch to Textile mode
+    - The buffer is unnamed and g:octopress_default_format is 'textile'
+
+Example:
+
+    let g:octopress_default_format = 'textile'
+
+The default is automatically 'markdown'.
+

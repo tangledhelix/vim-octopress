@@ -1,5 +1,5 @@
 " Vim filetype plugin
-" Language:     Markdown (Octopress variant with Liquid)
+" Language:     Octopress (Markdown/Textile with Liquid)
 " Maintainer:   Dan Lowe (dan@tangledhelix.com)
 " Last Change:  2 Dec 2012
 " URL:          https://github.com/tangledhelix/vim-octopress

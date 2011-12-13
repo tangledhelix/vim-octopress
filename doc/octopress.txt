@@ -2,6 +2,7 @@
 
 Introduction                          |octopress-intro|
 Default file format                   |g:octopress_default_format|
+Textile support                       |octopress-textile|
 
                                                              *octopress-intro*
 vim-octopress provides syntax support for Octopress posts (in Markdown or
@@ -22,4 +23,11 @@ Example:
     let g:octopress_default_format = 'textile'
 
 The default is automatically 'markdown'.
+
+                                                           *octopress-textile*
+Though the default format is Markdown, Textile is supported as well. You
+must install the Textile bundle yourself, since it is not included with
+Vim (at least not as of version 7.3). You can get the Textile bundle here:
+
+    http://www.vim.org/scripts/script.php?script_id=2305
 

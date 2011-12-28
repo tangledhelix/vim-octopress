@@ -5,30 +5,30 @@
 " URL:          https://github.com/tangledhelix/vim-octopress
 
 if exists('b:current_syntax')
-	finish
+    finish
 endif
 
 if !exists('g:octopress_default_format')
-	let g:octopress_default_format = 'markdown'
+    let g:octopress_default_format = 'markdown'
 endif
 
 let b:filename = expand('%:t')
 if empty(b:filename)
-	let b:octopress_filetype = g:octopress_default_format
+    let b:octopress_filetype = g:octopress_default_format
 else
-	let b:octopress_fname_result = matchlist(b:filename, '\m\.\([^.]\+\)$')
-	let b:octopress_fname_exten = b:octopress_fname_result[1]
-	if b:octopress_fname_exten == 'textile'
-		let b:octopress_filetype = 'textile'
-	else
-		let b:octopress_filetype = 'markdown'
-	endif
+    let b:octopress_fname_result = matchlist(b:filename, '\m\.\([^.]\+\)$')
+    let b:octopress_fname_exten = b:octopress_fname_result[1]
+    if b:octopress_fname_exten == 'textile'
+        let b:octopress_filetype = 'textile'
+    else
+        let b:octopress_filetype = 'markdown'
+    endif
 endif
 
 if b:octopress_filetype == 'textile'
-	runtime! syntax/textile.vim
+    runtime! syntax/textile.vim
 else
-	runtime! syntax/markdown.vim
+    runtime! syntax/markdown.vim
 endif
 unlet! b:current_syntax
 

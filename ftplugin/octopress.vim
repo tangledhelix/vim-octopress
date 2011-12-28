@@ -5,7 +5,7 @@
 " URL:          https://github.com/tangledhelix/vim-octopress
 
 if exists('b:did_ftplugin')
-	finish
+    finish
 endif
 
 " This mostly loads HTML-related code, so it should not interfere

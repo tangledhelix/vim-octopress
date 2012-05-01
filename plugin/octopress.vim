@@ -19,6 +19,9 @@ function! s:Octopress(task)
 		echo "Sorry, background tasks are not supported."
 		return
 	elseif a:task == 'generate' || a:task == 'deploy' || a:task == 'gen_deploy' || a:task == 'push' || a:task == 'rsync' || a:task == 'clean'
+        if a:task == 'deploy' || a:task == 'gen_deploy' || a:task == 'rsync'
+            execute 'set noswapfile'
+        endif
 		execute '!rake ' . a:task
 	else
 		echo "I don't know about that Octopress task."

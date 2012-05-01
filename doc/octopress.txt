@@ -1,15 +1,17 @@
 *octopress.txt*                                    *vim-octopress* *octopress*
 
-Introduction                              |octopress-intro|
-Default file format                       |octopress-default-format|
-Textile support                           |octopress-textile|
-Using Octopress syntax automatically      |octopress-autocmd|
+Introduction                            |octopress-intro|
+Default file format                     |octopress-default-format|
+Textile support                         |octopress-textile|
+Using Octopress syntax automatically    |octopress-autocmd|
+The :Octopress command                  |:Octopress|
+Using a custom 'rake' executable        |g:octopress_rake_executable|
 
                                                              *octopress-intro*
 vim-octopress provides syntax support for Octopress posts (in Markdown or
-Textile formats).
+Textile formats) and provides some Octopress rake tasks to run within Vim.
 
-You can get the latest code on GitHub:
+You can always find the latest code on GitHub:
 
 https://github.com/tangledhelix/vim-octopress
 
@@ -43,4 +45,24 @@ To use this mode for your Octopress files, use an `autocmd`.
 Since Octopress is a superset of Markdown and Textile, it should not interfere
 with non-Octopress Markdown and Textile files. It's also a superset of the
 Jekyll syntax, so it should work fine for any pure Jekyll files you might have.
+
+                                                                  *:Octopress*
+The :Octopress command
+
+:Octopress <task>
+
+<task> is one of:
+
+    generate     Regenerate output files from sources
+    deploy       Default deploy task
+    gen_deploy   Generate and then deploy
+    push         Deploy to GitHub Pages
+    rsync        Deploy via rsync
+    clean        Clean caches (pygments, gist, sass)
+
+                                                 *g:octopress_rake_executable*
+By default, "rake" is taken from your path. If you want to use a different
+rake, specify its path in octopress_rake_executable.
+
+    let g:octopress_rake_executable = '/path/to/rake'
 

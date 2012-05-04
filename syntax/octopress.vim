@@ -1,31 +1,30 @@
 " Vim syntax file
 " Language:     Octopress (Markdown/Textile with Liquid)
 " Maintainer:   Dan Lowe <dan@tangledhelix.com>
-" Last Change:  13 Dec 2012
 " URL:          https://github.com/tangledhelix/vim-octopress
 
-if exists('b:current_syntax')
+if exists("b:current_syntax")
     finish
 endif
 
-if !exists('g:octopress_default_format')
-    let g:octopress_default_format = 'markdown'
+if !exists("g:octopress_default_format")
+    let g:octopress_default_format = "markdown"
 endif
 
-let b:filename = expand('%:t')
+let b:filename = expand("%:t")
 if empty(b:filename)
     let b:octopress_filetype = g:octopress_default_format
 else
     let b:octopress_fname_result = matchlist(b:filename, '\m\.\([^.]\+\)$')
     let b:octopress_fname_exten = b:octopress_fname_result[1]
-    if b:octopress_fname_exten == 'textile'
-        let b:octopress_filetype = 'textile'
+    if b:octopress_fname_exten == "textile"
+        let b:octopress_filetype = "textile"
     else
-        let b:octopress_filetype = 'markdown'
+        let b:octopress_filetype = "markdown"
     endif
 endif
 
-if b:octopress_filetype == 'textile'
+if b:octopress_filetype == "textile"
     runtime! syntax/textile.vim
 else
     runtime! syntax/markdown.vim
@@ -64,5 +63,5 @@ HiLink  octopressBacktickBlock          Underlined
 
 delcommand HiLink
 
-let b:current_syntax = 'octopress'
+let b:current_syntax = "octopress"
 

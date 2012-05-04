@@ -19,13 +19,13 @@ https://github.com/tangledhelix/vim-octopress
 By default, Octopress will assume a file's base syntax is Markdown, unless:
 
     - The filename ends in .textile, which will switch to Textile mode
-    - The buffer is unnamed and 'g:octopress_default_format' is 'textile'
+    - The buffer is unnamed and "g:octopress_default_format" is "textile"
 
 Example:
 
-    let g:octopress_default_format = 'textile'
+    let g:octopress_default_format = "textile"
 
-The default format is 'markdown' unless otherwise specified.
+The default format is "markdown" unless otherwise specified.
 
                                                            *octopress-textile*
 Though the default format is Markdown, Textile is supported as well. You
@@ -38,9 +38,9 @@ either of the following locations:
     https://github.com/timcharper/textile.vim
 
                                                            *octopress-autocmd*
-To use this mode for your Octopress files, use an `autocmd`.
+To use this mode for your Octopress files, use an autocmd.
 
-    autocmd BufNewFile,BufRead *.markdown,*.textile setfiletype octopress
+    autocmd BufNewFile,BufRead *.markdown,*.textile set filetype=octopress
 
 Since Octopress is a superset of Markdown and Textile, it should not interfere
 with non-Octopress Markdown and Textile files. It's also a superset of the
@@ -64,5 +64,5 @@ The :Octopress command
 By default, "rake" is taken from your path. If you want to use a different
 rake, specify its path in octopress_rake_executable.
 
-    let g:octopress_rake_executable = '/path/to/rake'
+    let g:octopress_rake_executable = "/path/to/rake"
 

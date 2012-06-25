@@ -63,5 +63,5 @@ HiLink  octopressBacktickBlock          Underlined
 
 delcommand HiLink
 
-let b:current_syntax = "octopress"
+let b:current_syntax = 'octopress'
 

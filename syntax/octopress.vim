@@ -40,7 +40,7 @@ syn match octopressYamlFrontMatterValue /\m\s.*$/ contained
 syn match octopressLiquidTag /\m{%\s\+\(video\|include_code\|gist\|jsfiddle\|img\|render_partial\|include\)\s.*\s*%}/ oneline
 
 " Liquid blocks
-syn region octopressLiquidBlock matchgroup=octopressLiquidBlockDelimiter start=/\m{%\s\+\(codeblock\|blockquote\|pullquote\)\s.*\s*%}/ end=/\m{%\s\+end\(codeblock\|blockquote\|pullquote\)\s\+%}/ contains=octopressPullquote
+syn region octopressLiquidBlock matchgroup=octopressLiquidBlockDelimiter start=/\m{%\s\+\(codeblock\|blockquote\|pullquote\|raw\)\s.*\s*%}/ end=/\m{%\s\+end\(codeblock\|blockquote\|pullquote\|raw\)\s\+%}/ contains=octopressPullquote
 syn match octopressPullquote /\m{"\s[^{]\+\s"}/ contained oneline
 
 " Backtick block

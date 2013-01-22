@@ -53,12 +53,24 @@ The :Octopress command
 
 <task> is one of:
 
+    new_post     Add a new post
     generate     Regenerate output files from sources
     deploy       Default deploy task
     gen_deploy   Generate and then deploy
     push         Deploy to GitHub Pages
     rsync        Deploy via rsync
     clean        Clean caches (pygments, gist, sass)
+
+new_post is the only command that takes arguments. The rest of the line
+after ':Octopress new_post' is considered to be the post title.
+
+Note that due to a problem with rake's argument handling, a post title that
+contains a comma will be truncated at the comma. I tried to work around this
+using shell escapes and such, but it's a problem in rake itself, and is an
+issue using the raw Octopress commands outside of Vim also.
+
+imathis says this will not be a problem when they move to a CLI instead of
+using rake.
 
                                                  *g:octopress_rake_executable*
 By default, 'rake' is taken from your path. If you want to use a different

@@ -12,9 +12,10 @@ endif
 let g:loaded_octopress = 1
 
 if exists('g:octopress_rake_executable')
-	let b:octopress_rake_executable = g:octopress_rake_executable
+	" Just use the global if it's set
 else
-	let b:octopress_rake_executable = 'rake'
+	" Otherwise set the global to 'rake'
+	let g:octopress_rake_executable = 'rake'
 endif
 
 function! s:Octopress(task, ...)
@@ -24,8 +25,8 @@ function! s:Octopress(task, ...)
 			echoerr 'Missing post_title'
 			return
 		endif
-		let rakefile_path = substitute(system(b:octopress_rake_executable . " -e 'puts (Rake.application.find_rakefile_location())[1]'"), "\n", '', '')
-		let rake_output = system(b:octopress_rake_executable . ' ' . a:task . '[' . shellescape(join(a:000)) . ']')
+		let rakefile_path = substitute(system(g:octopress_rake_executable . " -e 'puts (Rake.application.find_rakefile_location())[1]'"), "\n", '', '')
+		let rake_output = system(g:octopress_rake_executable . ' ' . a:task . '[' . shellescape(join(a:000)) . ']')
 		let post_path = ''
 		for line in split(rake_output, "\n")
 			if line =~? 'Creating new post:'
@@ -46,7 +47,7 @@ function! s:Octopress(task, ...)
 		if a:task ==# 'deploy' || a:task ==# 'gen_deploy' || a:task ==# 'rsync'
 			execute 'set noswapfile'
 		endif
-		execute '!' . b:octopress_rake_executable . ' ' . a:task
+		execute '!' . g:octopress_rake_executable . ' ' . a:task
 	else
 		echo "I don't know about that Octopress task."
 	endif

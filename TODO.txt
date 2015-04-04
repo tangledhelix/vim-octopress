@@ -1,0 +1,10 @@
+
+Check swapfile state before exe
+
+Does it interact with swapdir or whatever? Just safe to toggle swapdir even if
+dir non std?
+
+Store state in local var to restore same state afterwards
+
+What about backup /tilde files, same issue
+
